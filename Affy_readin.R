@@ -6,13 +6,21 @@ setwd("~/Bioinformatics work/Affy stuff/Affy")
 #biocLite("annotate")
 #biocLite("limma")
 
+
+
 library(affy)
 library(oligo)
 library(annotate)
 library(limma)
 
-##automatically reads in all .CEL files
-AffyData <- ReadAffy()
+
+
+## Read in and make expression set of data 
+# function automatically finds all .CEL files in directory
+eset <- justRMA()
+exp <- exprs(eset)
+
+#you can save out the exp file as you like (big tho)
 
 #I made a pheno table from clinical info on the website
 pheno <- read.table("Phenotype_MA.txt", sep = "\t", header = TRUE, row.names = 1)
@@ -20,5 +28,4 @@ pheno <- read.table("Phenotype_MA.txt", sep = "\t", header = TRUE, row.names = 1
 status <- as.factor(pheno$Status)
 
 
-## Make exprs set of data
 
