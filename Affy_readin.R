@@ -10,13 +10,14 @@ setwd("~/Bioinformatics work/Affy stuff/Affy")
 
 
 library(affy)
-library(oligo)
+#library(oligo)
 library(annotate)
 library(limma)
 library(affycoretools)
 
 #I made a pheno table from clinical info on the website
 pheno <- read.AnnotatedDataFrame("Phenotype_MA.txt", sep = "\t", header = TRUE, row.names = 1)
+##makes this file a "pheno" class file for affy package
 pData(pheno)
 
 ## Read in and make expression set of data 
