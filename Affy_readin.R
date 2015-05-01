@@ -24,6 +24,8 @@ pData(pheno)
 # function automatically finds all .CEL files in directory
 ##RMA is normalising function also
 eset <- justRMA(phenoData = pheno)
+#with no pehno data to include
+#eset <- justRMA()
 exp <- exprs(eset)
 
 #you can save out the exp file as you like (big tho)
@@ -103,3 +105,5 @@ tab$genenames <- tmp$Symbol
 sizeGrWindow(12,9)
 par(mar=c(5,4,4,4))
 heatmap(exprs(esetSel), labCol = group, labRow = tab$genenames)
+
+
