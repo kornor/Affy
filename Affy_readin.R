@@ -81,6 +81,7 @@ library(R2HTML)
 
 
 ### Make a subset of only the top
+### Use this method to get exact probes you would be looking for, i.e. make 'tab' file a list of ids
 list <- match(rownames(tab), rownames(eset))
 eset2 <- eset [list,] 
 
